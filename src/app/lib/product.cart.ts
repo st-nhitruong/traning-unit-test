@@ -26,7 +26,7 @@ export class Cart implements ListProduct {
 
   getCart() {
     return this.listProduct;
-  };
+  }
 
   // addProduct = (prd: Product) => {
   //   let index = this.listProduct.findIndex(
@@ -51,13 +51,17 @@ export class Cart implements ListProduct {
     } else {
       return this.listProduct.push(prd);
     }
-  };
+  }
 
   removeProduct(id: number) {
     this.listProduct = this.listProduct.filter(
       (item) => item.product.id !== id
     );
-  };
+  }
+
+  clearProductList() {
+    this.listProduct = [];
+  }
 
   totalPrice() {
     let calcDiscount = 0;
@@ -75,5 +79,5 @@ export class Cart implements ListProduct {
           100
       );
     }, 0);
-  };
+  }
 }
