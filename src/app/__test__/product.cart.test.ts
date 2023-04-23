@@ -22,14 +22,11 @@ const prd1: LineProduct = {
 describe("test cart product", () => {
   describe("test add product", () => {
     const cart = new Cart([]);
-    const addPrdMock = jest.spyOn(Cart.prototype, "getCart");
 
     cart.addProduct(prd1);
     test("add product success", () => {
       expect(cart.getCart()).toHaveLength(1);
       expect(cart.getCart()).toContain(prd1);
-      expect(addPrdMock).toBeCalled();
-
     });
   });
 
