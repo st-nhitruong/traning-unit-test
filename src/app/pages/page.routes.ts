@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import { PageRoute } from '@core/modules/custom-router-dom/router.interface';
-import articleRoutes from './articles/article.routes';
-import homeRoutes from './home/home.routes';
+import { PageRoute } from "@core/modules/custom-router-dom/router.interface";
+import articleRoutes from "./articles/article.routes";
+import userRoutes from "./users/user.routes";
+import homeRoutes from "./home/home.routes";
 
-const Page = React.lazy(() => import('./Page'));
+const Page = React.lazy(() => import("./Page"));
 
 const pageRoutes: PageRoute[] = [
   {
-    path: '/',
+    path: "/",
     element: Page,
-    children: [
-      ...homeRoutes,
-      ...articleRoutes
-    ]
-  }
+    children: [...homeRoutes, ...articleRoutes, ...userRoutes],
+  },
 ];
 
 export default pageRoutes;
