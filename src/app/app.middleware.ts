@@ -1,9 +1,8 @@
-import { all } from 'redux-saga/effects';
+import { all } from "redux-saga/effects";
 
-import { watchAuth } from '@app/core/auth/auth.middleware';
+import { watchAuth } from "@app/core/auth/auth.middleware";
+import { watchUser } from "@app/pages/users/user.middleware";
 
 export default function* appMiddleware() {
-  yield all([
-    watchAuth()
-  ]);
+  yield all([watchAuth(), watchUser()]);
 }
